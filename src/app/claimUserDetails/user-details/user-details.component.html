@@ -1,0 +1,81 @@
+<div [formGroup]="claimsForm">
+    <div fxLayout="row" formGroupName="userDetails">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName">
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" formGroupName="userDetails">
+        <div fxFlex>
+        <mat-form-field class="full-width">
+            <mat-label>@email</mat-label>
+            <input matInput type="email" formControlName="email">
+        </mat-form-field>
+        </div>
+        <div fxFlex>
+        <mat-form-field class="full-width">
+            <mat-label>Cell Phone No.</mat-label>
+            <input matInput type="number" formControlName="cellPhoneNo">
+        </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" formGroupName="userDetails">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+            <mat-label>House No.</mat-label>
+                <input matInput formControlName="houseNo">
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+            <mat-label>Street</mat-label>
+                <input matInput formControlName="streetName">
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" formGroupName="userDetails">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+            <mat-label>Pincode</mat-label>
+                <input matInput formControlName="pincode">
+            </mat-form-field>
+        </div>
+
+        <div fxFlex>
+            <mat-form-field class="full-width">
+            <mat-label>City</mat-label>
+                <input matInput formControlName="city">
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" formGroupName="userDetails">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state">
+                <mat-option *ngFor="let state of lstStates$ |async" [value]="state.id">
+                    {{state.name}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Country</mat-label>
+                <mat-select [(value)]="selectedCountry" formControlName="country">
+                    <mat-option *ngFor="let country of lstCountries$ |async" [value]="country.id">
+                        {{country.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

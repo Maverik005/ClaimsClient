@@ -1,0 +1,67 @@
+<div [formGroup]="claimsForm">
+    <div fxLayout="row" formGroupName="vehicleDetails">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Manufacturer</mat-label>
+                <mat-select [(value)]="selectedManufacturer" (selectionChange)="SelectedManufacturerChanged()" formControlName="manufacturer">
+                    <mat-option *ngFor="let maker of lstManufacturer$ |async" [value]="maker.id">
+                        {{maker.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Model</mat-label>
+                <mat-select formControlName="vehicleModel">
+                    <mat-option *ngFor="let vModel of lstVehicleModels$ |async" [value]="vModel.id">
+                        {{vModel.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" formGroupName="vehicleDetails">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Vehicle FIN</mat-label>
+                <input matInput formControlName="vehicleFIN">
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Kilometers Driven</mat-label>
+                <input matInput type="number" formControlName="kilometersDriven">
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" formGroupName="vehicleDetails">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Manufacturing Date</mat-label>
+                <input matInput [matDatepicker]="manufacturingPicker" formControlName="manufacturingDate">
+                <mat-hint>Date of Vehicle Manufacturing</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="manufacturingPicker"></mat-datepicker-toggle>
+                <mat-datepicker #manufacturingPicker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Date of Purchase</mat-label>
+                <input matInput [matDatepicker]="purchasePicker" formControlName="dateOfPurchase">
+                <mat-hint>Date on which vehicle was purchased.</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="purchasePicker"></mat-datepicker-toggle>
+                <mat-datepicker #purchasePicker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" formGroupName="vehicleDetails">
+        <div fxFlex>
+            <mat-form-field style="width: 48%;">
+                <mat-label>Purchase Price</mat-label>
+                <input matInput type="number" formControlName="purchasePrise">
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+

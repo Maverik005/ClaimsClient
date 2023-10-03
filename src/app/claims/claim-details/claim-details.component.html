@@ -1,0 +1,29 @@
+<div style="margin-top: 15px;margin-left: 200px; margin-right: 200px;">
+  <form [formGroup]="claimsForm">
+    <mat-stepper linear #stepper>
+        <mat-step formGroupName="userDetails" [stepControl]="claimsForm.get('userDetails')!" [editable]="true">
+            <ng-template matStepLabel>Owner Details</ng-template>
+            <app-user-details [claimsForm]="claimsForm" #userDetails></app-user-details>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+            <mat-step formGroupName="vehicleDetails" [stepControl]="claimsForm.get('vehicleDetails')!" [editable]="true">
+                <ng-template matStepLabel>Vehicle Details</ng-template>
+                <app-vehicle-details [claimsForm]="claimsForm" #vehicleDetails></app-vehicle-details>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Verify & Submit</ng-template>
+                <p>Almost done.</p>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button>Submit</button>
+                </div>
+              </mat-step>
+    </mat-stepper>
+  </form>
+</div>
