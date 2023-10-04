@@ -1,8 +1,7 @@
-export interface ClaimVehicleDetails {
+export interface VehicleDetails {
     id?:number;
-    claimsId?:number;
-    manufacturerId:number;
-    modelId:number;
+    manufacturer:number;
+    vehicleModel:number;
     vehicleFIN:string;
     manufacturingDate:Date;
     kilometersDriven:number;

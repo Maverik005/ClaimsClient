@@ -1,8 +1,8 @@
-export interface ClaimUserDetails {
+export interface UserDetails {
     id?:number;
-    claimsId?:number;
-    countryId:number;
-    stateId:number;
+    claimTitle:string;
+    country:number;
+    state:number;
     city:string;
     pincode:string;
     firstName:string;

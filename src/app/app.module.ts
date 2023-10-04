@@ -16,6 +16,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +28,8 @@ import { UserDetailsComponent } from "./claimUserDetails/user-details/user-detai
 import { VehicleDetailsComponent } from './claimVehicleDetails/vehicle-details/vehicle-details.component';
 import { ClaimsListComponent } from './claims/claims-list/claims-list.component';
 import { ClaimDetailsComponent } from './claims/claim-details/claim-details.component';
+import { ClaimSummaryComponent } from './claims/claim-summary/claim-summary.component';
+import { ClaimDialogComponent } from './claims/claim-dialog/claim-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,8 @@ import { ClaimDetailsComponent } from './claims/claim-details/claim-details.comp
     VehicleDetailsComponent,
     ClaimsListComponent,
     ClaimDetailsComponent,
+    ClaimSummaryComponent,
+    ClaimDialogComponent,
   ],
   imports: [ BrowserModule,
     BrowserAnimationsModule,
@@ -48,6 +55,9 @@ import { ClaimDetailsComponent } from './claims/claim-details/claim-details.comp
     MatStepperModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule,
+    MatTooltipModule,
+    MatDialogModule,
     AppRoutingModule,
     HttpClientModule,
     FlexLayoutModule,

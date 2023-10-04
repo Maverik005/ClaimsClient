@@ -18,11 +18,7 @@
             </mat-step>
             <mat-step>
                 <ng-template matStepLabel>Verify & Submit</ng-template>
-                <p>Almost done.</p>
-                <div>
-                  <button mat-button matStepperPrevious>Back</button>
-                  <button mat-button>Submit</button>
-                </div>
+                <app-claim-summary [claimsForm]="claimsForm"></app-claim-summary>
               </mat-step>
     </mat-stepper>
   </form>

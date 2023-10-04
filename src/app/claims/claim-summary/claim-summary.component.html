@@ -1,0 +1,118 @@
+<div>
+    <div fxLayout="row">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>First Name:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('firstName')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Last Name:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('lastName')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Email:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('email')!.value}}"> 
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Cell Phone No:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('cellPhoneNo')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>House No:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('houseNo')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Street:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('streetName')!.value}}"> 
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Pincode:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('pincode')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>City:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('city')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>State:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('state')!.value}}"> 
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex>
+            <mat-form-field style="width:32%">
+                <mat-label>Country:</mat-label>
+                <input matInput value="{{claimsForm.get('userDetails')!.get('country')!.value}}"> 
+            </mat-form-field>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row" style="margin-top: 15px;">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Manufacturer:</mat-label>
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('manufacturer')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Vehicle Model:</mat-label>
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('vehicleModel')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Manufacturing Date:</mat-label>
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('manufacturingDate')!.value}}"> 
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Kilometers Driven:</mat-label>
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('kilometersDriven')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Date of Purchase:</mat-label>
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('dateOfPurchase')!.value}}"> 
+            </mat-form-field>
+        </div>
+        <div fxFlex>
+            <mat-form-field class="full-width">
+                <mat-label>Purchase Price:</mat-label>
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('purchasePrise')!.value}}"> 
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex>
+            <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button color="accent" (click)="SaveClaim()" *ngIf="!editMode">Save Claim</button>
+            <button mat-raised-button color="primary" (click)="UpdateClaim()" *ngIf="editMode">Update Claim</button>
+        </div>
+    </div>
+</div>

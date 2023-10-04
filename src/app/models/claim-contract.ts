@@ -1,0 +1,24 @@
+export interface ClaimContract{
+    id?:number;
+    claimTitle:string;
+    claimTypeId:number;
+    userId?:number;
+    countryId:number;
+    stateId:number;
+    pincode:string;
+    city:string;
+    firstName:string;
+    lastName:string;
+    email:string;
+    cellPhoneNo:number;
+    houseNo:string;
+    streetName:string;
+    vehicleId?:number;
+    manufacturerId:number;
+    modelId:number;
+    vehicleFIN:string;
+    manufacturingDate:Date;
+    kilometersDriven:number;
+    dateOfPurchase:Date;
+    purchasePrise:number;
+}

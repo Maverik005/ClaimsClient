@@ -59,12 +59,12 @@
     <div fxLayout="row" formGroupName="userDetails">
         <div fxFlex>
             <mat-form-field class="full-width">
-            <mat-label>State</mat-label>
-            <mat-select formControlName="state">
-                <mat-option *ngFor="let state of lstStates$ |async" [value]="state.id">
-                    {{state.name}}
-                </mat-option>
-            </mat-select>
+                <mat-label>State</mat-label>
+                <mat-select formControlName="state">
+                    <mat-option *ngFor="let state of lstStates$ |async" [value]="state.id">
+                        {{state.name}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
         <div fxFlex>

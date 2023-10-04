@@ -4,6 +4,10 @@ export class ApiConfig {
     getCountries:string;
     getManufacturers:string;
     getVehicleModels:string;
+    addClaim:string;
+    getAllClaims:string;
+    deleteClaim:string;
+    updateClaim:string;
 }
 
 const apiConfig: ApiConfig = {
@@ -11,7 +15,11 @@ const apiConfig: ApiConfig = {
     getStates: "/GetStates",
     getCountries:"/GetCountries",
     getManufacturers:"/GetManufacturers",
-    getVehicleModels:"/GetVehicleModels"
+    getVehicleModels:"/GetVehicleModels",
+    addClaim:"/api/Claims",
+    getAllClaims:"/api/Claims",
+    deleteClaim:"/deleteClaim",
+    updateClaim:"/updateClaim"
 }
 
 export { apiConfig }

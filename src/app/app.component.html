@@ -1,10 +1,9 @@
-<mat-toolbar class="mat-elevation-z4" color="primary">
+<mat-toolbar color="primary">
   <label>
     Claims Management
   </label>
   <div class="toolbar-spacer"></div>
   <a mat-button [routerLink]="['claims']">Claims</a>
-  <a mat-button [routerLink]="['claimDetails']">Claim Details</a>
   <button mat-raised-button *ngIf="!isUserLoggedIn" (click)="logIn()">Login</button>
   <button mat-raised-button *ngIf="isUserLoggedIn" (click)="logOut()">Logout</button>
 </mat-toolbar>
