@@ -18,7 +18,6 @@ import { ClaimDialogComponent } from "../claim-dialog/claim-dialog.component";
 export class ClaimsListComponent implements OnInit{
   private claimsSvc = inject(ClaimService);
   private relaySvc = inject(ClaimRelayService);
-  private router = inject(Router);
   private vehicleCfgSvc = inject(VehicleConfigService);
   lstClaims$:Observable<ClaimContract[]>;
   lstVehicleModels$: Observable<VehicleModels[]>
@@ -32,15 +31,10 @@ export class ClaimsListComponent implements OnInit{
     this.lstManufacturer$ = this.vehicleCfgSvc.GetManufacturers();
   }
 
-  NavigateTo(){
-    this.router.navigateByUrl("~/claimDetails")
-  }
-
   EditClaim(claimObj:any){
     this.relaySvc.Sender(claimObj);
   }
 
-  
   GetVehicleModel(manufacturerId: number): Observable<VehicleModels[]>{
     this.lstVehicleModels$ = this.vehicleCfgSvc.GetVehicleModels(manufacturerId);
     return this.lstVehicleModels$;

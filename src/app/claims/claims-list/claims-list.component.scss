@@ -5,10 +5,6 @@
     z-index: 5;
 }
 
-.mat-mdc-fab{
-    background-color: #2EAFF0;
-}
-
 .headerStyle{
     margin-top: 15px;
 }
@@ -16,4 +12,26 @@
 #editButton.mat-mdc-icon-button{
     color: #49EE78;
 }
+
+@keyframes glowing {
+    0% {
+      background-color: #2ef075;
+      box-shadow: 0 0 5px #2ef075;
+    }
+    50% {
+      background-color: #2ef075;
+      box-shadow: 0 0 50px #2ef075;
+    }
+    100% {
+      background-color: #2ef075;
+      box-shadow: 0 0 5px #2ef075;
+    }
+  }
+  .mat-mdc-fab {
+    animation: glowing 3000ms infinite;
+  }
+
+  .mat-mdc-header-cell {
+    font-weight: bold !important;
+  }
 

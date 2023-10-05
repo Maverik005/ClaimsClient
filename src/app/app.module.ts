@@ -30,6 +30,8 @@ import { ClaimsListComponent } from './claims/claims-list/claims-list.component'
 import { ClaimDetailsComponent } from './claims/claim-details/claim-details.component';
 import { ClaimSummaryComponent } from './claims/claim-summary/claim-summary.component';
 import { ClaimDialogComponent } from './claims/claim-dialog/claim-dialog.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { MasterComponent } from './master/master.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { ClaimDialogComponent } from './claims/claim-dialog/claim-dialog.compone
     ClaimDetailsComponent,
     ClaimSummaryComponent,
     ClaimDialogComponent,
+    LoginComponent,
+    MasterComponent,
   ],
   imports: [ BrowserModule,
     BrowserAnimationsModule,
@@ -67,7 +71,7 @@ import { ClaimDialogComponent } from './claims/claim-dialog/claim-dialog.compone
         {
           auth:{
             clientId:'30ee6bd3-5275-4c47-97d5-f36d75a03cae',
-            redirectUri:'http://localhost:4200',
+            redirectUri:'http://localhost:4200/master/claims',
             authority:'https://login.microsoftonline.com/1b1ec18b-f7b3-4a2e-8b20-d9fa580f1f75'
           },
           cache:{
@@ -87,7 +91,7 @@ import { ClaimDialogComponent } from './claims/claim-dialog/claim-dialog.compone
         protectedResourceMap: new Map(
           [
             ['https://graph.microsoft.com/v1.0/me',['user.read']],
-            ['https://localhost',['api://6c33458e-6e94-46eb-a8fd-3106cd6605cd/api.scope']]
+            ['http://localhost:4200',['api://6c33458e-6e94-46eb-a8fd-3106cd6605cd/api.scope']]
           ]
         )
       }

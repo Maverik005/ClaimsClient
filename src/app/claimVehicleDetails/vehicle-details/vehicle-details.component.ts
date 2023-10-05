@@ -40,7 +40,6 @@ export class VehicleDetailsComponent implements OnInit{
   }
 
   lstVehicleModels$: Observable<VehicleModels[]> = this.manufacturerSelectedAction$.pipe(
-    tap(mf => console.log(mf)),
     switchMap(manufacturerId => this.vehicleCfgSvc.GetVehicleModels(manufacturerId))
   )
 }

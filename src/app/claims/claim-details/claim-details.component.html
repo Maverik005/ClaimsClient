@@ -1,6 +1,6 @@
 <div style="margin-top: 15px;margin-left: 200px; margin-right: 200px;">
   <form [formGroup]="claimsForm">
-    <mat-stepper linear #stepper>
+    <mat-stepper #stepper>
         <mat-step formGroupName="userDetails" [stepControl]="claimsForm.get('userDetails')!" [editable]="true">
             <ng-template matStepLabel>Owner Details</ng-template>
             <app-user-details [claimsForm]="claimsForm" #userDetails></app-user-details>

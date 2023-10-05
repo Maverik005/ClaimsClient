@@ -1,10 +1,11 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subject, Subscription, takeUntil } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ClaimContract } from 'src/app/models/claim-contract';
 import { ClaimRelayService } from "../../helper/claim-relay.service";
 @Component({
   selector: 'app-claim-details',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './claim-details.component.html',
   styleUrls: ['./claim-details.component.scss']
 })
@@ -14,17 +15,15 @@ export class ClaimDetailsComponent implements OnInit, OnDestroy{
   claimFormObj:any;
   claimsForm: FormGroup;
   
-  constructor(private _formBuilder:FormBuilder){
+  constructor(private _formBuilder:FormBuilder ){
     this.relaySubscription = this.relaySvc.Receiver()
     .subscribe(relayObj=> {
       if(relayObj)
         this.claimFormObj = relayObj.value as ClaimContract;
-      console.log(relayObj)
    });
   }
   ngOnDestroy(): void {
     this.relaySubscription.unsubscribe();
-    this.relaySvc.relayMessage.next({value:{},editMode:false});
   }
   ngOnInit(): void {
     this.claimsForm = this._formBuilder.group({

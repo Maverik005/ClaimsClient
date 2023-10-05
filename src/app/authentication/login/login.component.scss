@@ -1,0 +1,23 @@
+.login-header-image {
+    background-image: url('../../assets/images/SecureLogin.png');
+    background-size:cover;
+}
+
+.mat-mdc-raised-button:not(:disabled){
+    height: 55px;
+    background-color: #F3F781;
+    font-size:x-large;
+}
+
+.mat-card-wrapper{
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+    height: 99vh;
+}
+
+.login-background{
+    background-image: url('../../assets/deepblack.jpg');
+    background-size: cover;
+}

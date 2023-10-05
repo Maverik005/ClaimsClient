@@ -7,7 +7,6 @@ import { Observable, Subscription } from 'rxjs';
 import { ClaimRelayService } from "../../helper/claim-relay.service";
 import { State } from "../../models/state";
 import { Country } from "../../models/country";
-import { AddressConfigService } from "../../helper/address-config.service";
 
 @Component({
   selector: 'app-claim-summary',
@@ -17,7 +16,6 @@ import { AddressConfigService } from "../../helper/address-config.service";
 export class ClaimSummaryComponent {
   @Input() claimsForm: FormGroup;
   private relaySvc = inject(ClaimRelayService);
-  private addrService = inject(AddressConfigService);
   lstCountries$: Observable<Country[]>;
   lstStates$: Observable<State[]>;
   relaySubscription:Subscription;
@@ -32,7 +30,6 @@ export class ClaimSummaryComponent {
       if(relayObj){
         this.editMode = relayObj.editMode;
         this.originalClaim = relayObj.value as ClaimContract;
-        console.log(this.originalClaim)
       }
    });
   }
