@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.subscription = this.authService.handleRedirectObservable().subscribe({
       next: (result: AuthenticationResult) => {
         if(result && result.accessToken){
+          sessionStorage.setItem("authResponse", JSON.stringify(result))
           this.isUserLoggedIn = true;
           this.loginSvc.isUserLoggedIn.next(this.isUserLoggedIn)
           this.router.navigate(['master/claims'])

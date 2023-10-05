@@ -24,6 +24,7 @@ export class ClaimDetailsComponent implements OnInit, OnDestroy{
   }
   ngOnDestroy(): void {
     this.relaySubscription.unsubscribe();
+    this.relaySvc.relayMessage.next({value:{},editMode:false});
   }
   ngOnInit(): void {
     this.claimsForm = this._formBuilder.group({

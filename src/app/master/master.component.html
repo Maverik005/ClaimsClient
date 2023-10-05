@@ -1,8 +1,9 @@
 <mat-toolbar color="primary">
-    <label>
-      Claims Management
-    </label>
-    <div class="toolbar-spacer"></div>
+    <mat-icon>account_circle</mat-icon> 
+    <h3 class="userStyle">
+      {{loggedInUser}}
+    </h3>
+    <div class="toolbar-spacer"><h3>Claims Management</h3></div>
     <a mat-button [routerLink]="['claims']">Claims</a>
     <button mat-raised-button (click)="logOut()">
       <mat-icon>logout</mat-icon>Logout
