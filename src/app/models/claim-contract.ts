@@ -2,6 +2,7 @@ export interface ClaimContract{
     id?:number;
     claimTitle:string;
     claimTypeId:number;
+    claimManager:string;
     userId?:number;
     countryId:number;
     stateId:number;

@@ -9,8 +9,8 @@ export class ClaimRelayService {
 
   constructor() { }
 
-  Sender(relayObject: any) {
-    this.relayMessage.next({value: relayObject, editMode:true});
+  Sender(relayObject: any, editMode:boolean) {
+    this.relayMessage.next({value: relayObject, editMode:editMode});
   }
 
   ClearQueue() {

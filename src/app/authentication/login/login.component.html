@@ -1,15 +1,17 @@
 <div class="mat-card-wrapper login-background">
     <mat-card style="width:500px;">
         <mat-card-header>
-            <mat-icon mat-card-avatar>
-                login 
-            </mat-icon>
+            <div mat-card-avatar class="login-header-image"></div>
             <mat-card-title>Login</mat-card-title>
             <mat-card-subtitle>
-                Secured by Microsoft Entra ID</mat-card-subtitle>
+                Secured by <span class="partialSubTitle">Microsoft Entra ID</span>
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <button mat-raised-button class="full-width" (click)="logIn()">Login</button>
+            <button mat-raised-button class="full-width" (click)="logIn()">
+                <mat-icon>login</mat-icon>
+                Login
+            </button>
         </mat-card-content>
     </mat-card>
 </div>

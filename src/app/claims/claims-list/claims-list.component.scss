@@ -10,21 +10,21 @@
 }
 
 #editButton.mat-mdc-icon-button{
-    color: #49EE78;
+    color: darkgray;
 }
 
 @keyframes glowing {
     0% {
-      background-color: #2ef075;
-      box-shadow: 0 0 5px #2ef075;
+      background-color: #3f87a6;
+      box-shadow: 0 0 5px #3f87a6;
     }
     50% {
-      background-color: #2ef075;
-      box-shadow: 0 0 50px #2ef075;
+      background-color: #3f87a6;
+      box-shadow: 0 0 50px #3f87a6;
     }
     100% {
-      background-color: #2ef075;
-      box-shadow: 0 0 5px #2ef075;
+      background-color: #3f87a6;
+      box-shadow: 0 0 5px #3f87a6;
     }
   }
   .mat-mdc-fab {

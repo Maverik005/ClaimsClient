@@ -1,12 +1,27 @@
-<mat-toolbar color="primary">
-    <mat-icon>account_circle</mat-icon> 
-    <h3 class="userStyle">
-      {{loggedInUser}}
-    </h3>
-    <div class="toolbar-spacer"><h3>Claims Management</h3></div>
-    <a mat-button [routerLink]="['claims']">Claims</a>
-    <button mat-raised-button (click)="logOut()">
-      <mat-icon>logout</mat-icon>Logout
-    </button>
-</mat-toolbar>
+<div fxLayout="row" class="toolbar-background">
+    <div fxFlex>
+        <button mat-icon-button [matMenuTriggerFor]="claimsMenu"><mat-icon>menu</mat-icon></button>
+        <mat-menu #claimsMenu="matMenu">
+            <button mat-menu-item [routerLink]="['claims']">Claims</button>
+        </mat-menu>
+    </div>
+    <div fxFlex class="toolbar-spacer"></div>
+    <div fxFlex="20">
+        <div fxLayout="row">
+            <div fxFlex="10" style="margin-top: 17px;text-align: right;">
+                <mat-icon>account_circle</mat-icon> 
+            </div>
+            <div fxFlex style="text-align: left;">
+                <h3 class="userStyle">
+                    {{loggedInUser}}
+                </h3>
+            </div>
+            <div fxFlex style="margin-top: 13px;text-align: right; margin-right: 5px;">
+                <button mat-raised-button (click)="logOut()">
+                    <mat-icon>logout</mat-icon>Logout
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 <router-outlet></router-outlet>

@@ -5,7 +5,6 @@ import { MsalGuard, MsalInterceptor, MsalModule, MsalRedirectComponent } from '@
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 /*Angular Material*/
-import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatListModule } from "@angular/material/list";
@@ -19,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +48,6 @@ import { MasterComponent } from './master/master.component';
   imports: [ BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatToolbarModule,
     MatListModule,
     MatButtonModule,
     MatCardModule,
@@ -62,6 +61,7 @@ import { MasterComponent } from './master/master.component';
     MatTableModule,
     MatTooltipModule,
     MatDialogModule,
+    MatMenuModule,
     AppRoutingModule,
     HttpClientModule,
     FlexLayoutModule,

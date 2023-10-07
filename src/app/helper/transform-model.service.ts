@@ -20,6 +20,7 @@ export class TransformModelService {
     this.xClaim.houseNo = claimObj.userDetails.houseNo;
     this.xClaim.streetName = claimObj.userDetails.streetName;
     this.xClaim.city = claimObj.userDetails.city;
+    this.xClaim.pincode = claimObj.userDetails.pincode;
     this.xClaim.stateId = claimObj.userDetails.state;
     this.xClaim.countryId = claimObj.userDetails.country;
     //Vehicle Info
