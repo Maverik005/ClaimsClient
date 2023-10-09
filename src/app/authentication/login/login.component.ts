@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.loginSvc.isUserLoggedIn.next(this.isUserLoggedIn)
         }
       },
-      error: () => this.logIn()
+      error: (error) => console.log(error)
     });
   }
 
