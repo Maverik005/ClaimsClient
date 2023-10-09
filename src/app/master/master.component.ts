@@ -17,7 +17,7 @@ export class MasterComponent implements OnInit{
     }
   }
   private authService = inject(MsalService);
-  postLogOutRedirectUrl = "https://purple-island-0f3d4cb03.3.azurestaticapps.net/login"
+  postLogOutRedirectUrl = "https://purple-island-0f3d4cb03.3.azurestaticapps.net"
   
   logOut() {
     sessionStorage.clear();
