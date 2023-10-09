@@ -11,7 +11,7 @@ export interface ClaimContract{
     firstName:string;
     lastName:string;
     email:string;
-    cellPhoneNo:number;
+    cellPhoneNo:string;
     houseNo:string;
     streetName:string;
     vehicleId?:number;

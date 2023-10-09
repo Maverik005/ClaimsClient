@@ -2,16 +2,17 @@
     <div fxFlex>
         <button mat-icon-button [matMenuTriggerFor]="claimsMenu"><mat-icon>menu</mat-icon></button>
         <mat-menu #claimsMenu="matMenu">
-            <button mat-menu-item [routerLink]="['claims']">Claims</button>
+            <button mat-menu-item [routerLink]="['claims']"><mat-icon>list</mat-icon>Claims</button>
+            <button mat-menu-item [routerLink]="['claimDetails']"><mat-icon>add</mat-icon>New Claims</button>
         </mat-menu>
     </div>
     <div fxFlex class="toolbar-spacer"></div>
     <div fxFlex="20">
         <div fxLayout="row">
-            <div fxFlex="10" style="margin-top: 17px;text-align: right;">
+            <div fxFlex style="margin-top: 17px;text-align: right;">
                 <mat-icon>account_circle</mat-icon> 
             </div>
-            <div fxFlex style="text-align: left;">
+            <div fxFlex="80" style="text-align: left;">
                 <h3 class="userStyle">
                     {{loggedInUser}}
                 </h3>

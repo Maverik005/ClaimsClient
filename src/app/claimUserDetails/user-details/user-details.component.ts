@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, NgZone, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { AddressConfigService } from "../../helper/address-config.service";
 import { State } from "../../models/state";
 import { Country } from "../../models/country";
@@ -10,13 +10,15 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.scss']
 })
-export class UserDetailsComponent implements AfterViewInit, OnInit {
+export class UserDetailsComponent implements OnInit {
   private addrService = inject(AddressConfigService);
   lstCountries$: Observable<Country[]>;
   lstStates$: Observable<State[]>;
   selectedCountry:number;
+  selectedState:number;
   @Input() claimsForm: FormGroup;
-  constructor(private zone: NgZone) {
+
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -27,10 +29,4 @@ export class UserDetailsComponent implements AfterViewInit, OnInit {
       })
     );  
   }
-
-  ngAfterViewInit (): void {
-    
-  }
-
-  
 }

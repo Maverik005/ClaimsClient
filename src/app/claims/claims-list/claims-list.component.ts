@@ -74,10 +74,9 @@ export class ClaimsListComponent implements OnInit{
       if (result) {
         this.lstClaims$ = this.claimsSvc.lstClaims$.pipe(
           tap(claimsList => {
-            const index = claimsList.findIndex(cl=>cl.id === claimId)
-            claimsList.splice(index,1);
+            claimsList.findIndex(cl=>cl.id === claimId)
           })
-        );
+    );
       }
   });
   }

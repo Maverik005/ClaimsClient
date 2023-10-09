@@ -19,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,8 @@ import { ClaimSummaryComponent } from './claims/claim-summary/claim-summary.comp
 import { ClaimDialogComponent } from './claims/claim-dialog/claim-dialog.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { MasterComponent } from './master/master.component';
+import { LoginService } from './authentication/login.service';
+import { ClaimRelayService } from './helper/claim-relay.service';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,7 @@ import { MasterComponent } from './master/master.component';
     MatTooltipModule,
     MatDialogModule,
     MatMenuModule,
+    MatSnackBarModule,
     AppRoutingModule,
     HttpClientModule,
     FlexLayoutModule,
@@ -70,13 +74,13 @@ import { MasterComponent } from './master/master.component';
       (
         {
           auth:{
-            clientId:'30ee6bd3-5275-4c47-97d5-f36d75a03cae',
-            redirectUri:'http://localhost:4200/master/claims',
+            clientId:'22c2129b-f3eb-4ebe-b467-14c4a2e5c95a',
+            redirectUri:'http://localhost:4200',
             authority:'https://login.microsoftonline.com/1b1ec18b-f7b3-4a2e-8b20-d9fa580f1f75'
           },
           cache:{
             cacheLocation:'localStorage',
-            storeAuthStateInCookie:false
+            storeAuthStateInCookie:true
           }
         }
       ),
@@ -91,7 +95,7 @@ import { MasterComponent } from './master/master.component';
         protectedResourceMap: new Map(
           [
             ['https://graph.microsoft.com/v1.0/me',['user.read']],
-            ['http://localhost:4200',['api://6c33458e-6e94-46eb-a8fd-3106cd6605cd/api.scope']]
+            ['localhost',['api://4cf06491-d930-4c37-9f02-ecec5bd5deb6/api.scope']]
           ]
         )
       }
@@ -101,7 +105,7 @@ import { MasterComponent } from './master/master.component';
     provide: HTTP_INTERCEPTORS,
     useClass: MsalInterceptor,
     multi:true
-  }, MsalGuard, MatDatepickerModule],
+  }, MsalGuard,LoginService, ClaimRelayService, MatDatepickerModule],
   bootstrap: [AppComponent, MsalRedirectComponent]
 })
 export class AppModule { }

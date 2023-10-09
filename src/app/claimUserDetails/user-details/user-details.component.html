@@ -23,7 +23,7 @@
         <div fxFlex>
         <mat-form-field class="full-width">
             <mat-label>Cell Phone No.</mat-label>
-            <input matInput type="number" formControlName="cellPhoneNo">
+            <input matInput formControlName="cellPhoneNo">
         </mat-form-field>
         </div>
     </div>
@@ -60,7 +60,7 @@
         <div fxFlex>
             <mat-form-field class="full-width">
                 <mat-label>State</mat-label>
-                <mat-select formControlName="state">
+                <mat-select [(value)]="selectedState" formControlName="state">
                     <mat-option *ngFor="let state of lstStates$ |async" [value]="state.id">
                         {{state.name}}
                     </mat-option>

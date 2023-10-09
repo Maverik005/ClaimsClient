@@ -8,10 +8,12 @@ import { MsalService } from '@azure/msal-angular';
 })
 export class MasterComponent implements OnInit{
   loggedInUser:string;
+  userRole: string;
   ngOnInit(): void {
     if(sessionStorage.length > 0){
       let sessionObj = sessionStorage.getItem("authResponse")?.toString() || "";
       this.loggedInUser = JSON.parse(sessionObj).account.name;
+      this.userRole = JSON.parse(sessionObj).account.idTokenClaims.roles[0];
     }
   }
   private authService = inject(MsalService);

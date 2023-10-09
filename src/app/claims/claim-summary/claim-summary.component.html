@@ -54,16 +54,24 @@
         </div>
         <div fxFlex>
             <mat-form-field class="full-width">
-                <mat-label>State:</mat-label>
-                <input matInput value="{{claimsForm.get('userDetails')!.get('state')!.value}}"> 
+                <mat-label>State</mat-label>
+                <mat-select [(value)]="setState" [disabled]="true">
+                    <mat-option *ngFor="let state of lstStates$ |async" [value]="state.id">
+                        {{state.name}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
     </div>
     <div fxLayout="row">
         <div fxFlex>
-            <mat-form-field style="width:32%">
-                <mat-label>Country:</mat-label>
-                <input matInput value="{{claimsForm.get('userDetails')!.get('country')!.value}}"> 
+            <mat-form-field style="width: 32%;">
+                <mat-label>Country</mat-label>
+                <mat-select [(value)]="setCountry" [disabled]="true">
+                    <mat-option *ngFor="let country of lstCountries$ |async" [value]="country.id">
+                        {{country.name}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
     </div>
@@ -71,14 +79,22 @@
     <div fxLayout="row" style="margin-top: 15px;">
         <div fxFlex>
             <mat-form-field class="full-width">
-                <mat-label>Manufacturer:</mat-label>
-                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('manufacturer')!.value}}"> 
+                <mat-label>Manufacturer</mat-label>
+                <mat-select [(value)]="setManufacturer" [disabled]="true">
+                    <mat-option *ngFor="let maker of lstManufacturer$ |async" [value]="maker.id">
+                        {{maker.name}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
         <div fxFlex>
             <mat-form-field class="full-width">
-                <mat-label>Vehicle Model:</mat-label>
-                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('vehicleModel')!.value}}"> 
+                <mat-label>Model</mat-label>
+                <mat-select [(value)]="setVehicleModel" [disabled]="true">
+                    <mat-option *ngFor="let vModel of lstVehicleModels$ |async" [value]="vModel.id">
+                        {{vModel.name}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
         <div fxFlex>

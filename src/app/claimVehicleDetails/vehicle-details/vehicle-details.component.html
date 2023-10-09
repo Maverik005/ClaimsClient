@@ -13,7 +13,7 @@
         <div fxFlex>
             <mat-form-field class="full-width">
                 <mat-label>Model</mat-label>
-                <mat-select formControlName="vehicleModel">
+                <mat-select [(value)]="selectedModel" formControlName="vehicleModel">
                     <mat-option *ngFor="let vModel of lstVehicleModels$ |async" [value]="vModel.id">
                         {{vModel.name}}
                     </mat-option>

@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Subscription } from 'rxjs';
 import { ClaimContract } from 'src/app/models/claim-contract';
 import { ClaimRelayService } from "../../helper/claim-relay.service";
+
 @Component({
   selector: 'app-claim-details',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -32,7 +33,7 @@ export class ClaimDetailsComponent implements OnInit, OnDestroy{
         claimtitle:new FormControl(this.claimFormObj.claimTitle,Validators.required), 
         firstName: new FormControl(this.claimFormObj.firstName,Validators.required),
         lastName: new FormControl(this.claimFormObj.lastName,Validators.required),
-        email: new FormControl(this.claimFormObj.email,Validators.required),
+        email: new FormControl(this.claimFormObj.email,[Validators.required, Validators.email]),
         cellPhoneNo: new FormControl(this.claimFormObj.cellPhoneNo, Validators.required),
         houseNo: new FormControl(this.claimFormObj.houseNo, Validators.required),
         streetName: new FormControl(this.claimFormObj.streetName, Validators.required),
