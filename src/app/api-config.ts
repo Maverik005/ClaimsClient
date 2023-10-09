@@ -11,7 +11,7 @@ export class ApiConfig {
 }
 
 const apiConfig: ApiConfig = {
-    Api_Base_Uri: "https://yourclaims.azurewebsites.net",
+    Api_Base_Uri: "https://claimmanager.azurewebsites.net",
     getStates: "/GetStates",
     getCountries:"/GetCountries",
     getManufacturers:"/GetManufacturers",
