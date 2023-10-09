@@ -75,7 +75,7 @@ export class ClaimSummaryComponent implements OnInit {
       this.setManufacturer = this.claimsForm.get('vehicleDetails')!.get('manufacturer')!.value;
       this.manufacturerSubject.next(this.setManufacturer);
       this.setVehicleModel = this.claimsForm.get('vehicleDetails')!.get('vehicleModel')!.value;
-    }
+    } 
   }
   ngOnDestroy(): void {
     this.relaySubscription.unsubscribe();
@@ -97,7 +97,11 @@ export class ClaimSummaryComponent implements OnInit {
     this.claimSvc.AddClaim(this.claimDataObj).subscribe(res =>{ 
       this.claimDataObj.id = +res
       this.relaySvc.Sender(this.claimDataObj,false);
-      this._snackBar.open("Succesfully added the claim!!!","Success")
+      this._snackBar.open("Succesfully added the claim!!!","Success",{
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration:5000
+      })
       this.router.navigate(['master/claims']);
     },
       error=>{
@@ -127,15 +131,27 @@ export class ClaimSummaryComponent implements OnInit {
     console.log(this.claimDataObj)
     this.claimSvc.UpdateClaim(this.claimDataObj).subscribe(() => {
       this.relaySvc.Sender(this.claimDataObj,true);
-      this._snackBar.open("Succesfully updated the claim!!!","Success")
+      this._snackBar.open("Succesfully updated the claim!!!","Success",{
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration:5000
+      })
       this.router.navigate(['master/claims']);
     },
     error=> {
       if(error.status === 403){
-        this._snackBar.open("You are not authorized!","Error")
+        this._snackBar.open("You are not authorized!","Error",{
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+          duration:5000
+        })
       } 
       else
-          this._snackBar.open("Application error. Sorry for the incovenience.","Error")
+          this._snackBar.open("Application error. Sorry for the incovenience.","Error",{
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration:5000
+          })
     });
   }
 }

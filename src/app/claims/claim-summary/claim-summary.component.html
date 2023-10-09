@@ -100,7 +100,7 @@
         <div fxFlex>
             <mat-form-field class="full-width">
                 <mat-label>Manufacturing Date:</mat-label>
-                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('manufacturingDate')!.value}}"> 
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('manufacturingDate')!.value | date: 'MMMM d, y'}}"> 
             </mat-form-field>
         </div>
     </div>
@@ -114,7 +114,7 @@
         <div fxFlex>
             <mat-form-field class="full-width">
                 <mat-label>Date of Purchase:</mat-label>
-                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('dateOfPurchase')!.value}}"> 
+                <input matInput value="{{claimsForm.get('vehicleDetails')!.get('dateOfPurchase')!.value | date: 'MMMM d, y'}}"> 
             </mat-form-field>
         </div>
         <div fxFlex>
@@ -128,7 +128,7 @@
         <div fxFlex>
             <button mat-raised-button matStepperPrevious>Back</button>
             <button mat-raised-button color="accent" (click)="SaveClaim()" *ngIf="!editMode">Save Claim</button>
-            <button mat-raised-button color="primary" (click)="UpdateClaim()" *ngIf="editMode">Update Claim</button>
+            <button mat-raised-button color="primary" (click)="UpdateClaim()" *ngIf="editMode" [disabled]="!claimsForm.valid">Update Claim</button>
         </div>
     </div>
 </div>

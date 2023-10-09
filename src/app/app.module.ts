@@ -75,7 +75,7 @@ import { ClaimRelayService } from './helper/claim-relay.service';
         {
           auth:{
             clientId:'22c2129b-f3eb-4ebe-b467-14c4a2e5c95a',
-            redirectUri:'http://localhost:4200',
+            redirectUri:'https://purple-island-0f3d4cb03.3.azurestaticapps.net',
             authority:'https://login.microsoftonline.com/1b1ec18b-f7b3-4a2e-8b20-d9fa580f1f75'
           },
           cache:{
@@ -95,7 +95,7 @@ import { ClaimRelayService } from './helper/claim-relay.service';
         protectedResourceMap: new Map(
           [
             ['https://graph.microsoft.com/v1.0/me',['user.read']],
-            ['localhost',['api://4cf06491-d930-4c37-9f02-ecec5bd5deb6/api.scope']]
+            //['localhost',['api://4cf06491-d930-4c37-9f02-ecec5bd5deb6/api.scope']]
           ]
         )
       }
