@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.authService.handleRedirectObservable().subscribe({
       next: (result: AuthenticationResult) => {
+        console.log(result)
         if(result && result.accessToken){
           sessionStorage.setItem("authResponse", JSON.stringify(result))
           this.isUserLoggedIn = true;
