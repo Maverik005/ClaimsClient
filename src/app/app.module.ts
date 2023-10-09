@@ -80,7 +80,7 @@ import { ClaimRelayService } from './helper/claim-relay.service';
           },
           cache:{
             cacheLocation:'localStorage',
-            storeAuthStateInCookie:true
+            storeAuthStateInCookie:false
           }
         }
       ),
