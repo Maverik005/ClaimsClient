@@ -11,7 +11,7 @@ export class ApiConfig {
 }
 
 const apiConfig: ApiConfig = {
-    Api_Base_Uri: "https://localhost:7290",
+    Api_Base_Uri: "https://yourclaims.azurewebsites.net",
     getStates: "/GetStates",
     getCountries:"/GetCountries",
     getManufacturers:"/GetManufacturers",

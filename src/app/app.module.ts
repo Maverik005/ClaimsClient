@@ -95,7 +95,7 @@ import { ClaimRelayService } from './helper/claim-relay.service';
         protectedResourceMap: new Map(
           [
             ['https://graph.microsoft.com/v1.0/me',['user.read']],
-            //['localhost',['api://4cf06491-d930-4c37-9f02-ecec5bd5deb6/api.scope']]
+            ['https://yourclaims.azurewebsites.net/',['api://4cf06491-d930-4c37-9f02-ecec5bd5deb6/api.scope']]
           ]
         )
       }
